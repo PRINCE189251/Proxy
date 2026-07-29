@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Hub Browser</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.browser-page{
+
+    padding:30px;
+
+}
+
+
+.browser-top{
+
+    display:flex;
+    gap:10px;
+    align-items:center;
+
+    background:rgba(255,255,255,0.08);
+
+    padding:15px;
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+
+.browser-top button{
+
+    padding:10px 15px;
+
+}
+
+
+.url-box{
+
+    flex:1;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    border:none;
+
+    outline:none;
+
+    background:#1e293b;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+
+
+.browser-screen{
+
+    margin-top:25px;
+
+    height:550px;
+
+    background:white;
+
+    border-radius:20px;
+
+    color:black;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+🚀 AI Hub
+
+</div>
+
+
+<nav>
+
+
+<a href="index.html">
+
+🏠 Home
+
+</a>
+
+
+<a>
+
+🤖 AI Chat
+
+</a>
+
+
+<a class="active">
+
+🌐 Browser
+
+</a>
+
+
+<a>
+
+🎨 Image Generator
+
+</a>
+
+
+<a>
+
+⚙ Settings
+
+</a>
+
+
+</nav>
+
+
+<div class="profile">
+
+👤 Prince
+
+</div>
+
+
+</aside>
+
+
+
+
+<!-- Browser Area -->
+
+
+<main class="main browser-page">
+
+
+<h1>
+
+🌐 AI Hub Browser
+
+</h1>
+
+
+<p>
+
+Browse inside your AI workspace
+
+</p>
+
+
+
+<div class="browser-top">
+
+
+<button onclick="goBack()">
+
+⬅
+
+</button>
+
+
+<button onclick="goForward()">
+
+➡
+
+</button>
+
+
+<button onclick="reloadPage()">
+
+🔄
+
+</button>
+
+
+
+<input 
+class="url-box"
+id="urlInput"
+placeholder="Enter supported URL or search..."
+>
+
+
+<button onclick="loadPage()">
+
+Go
+
+</button>
+
+
+</div>
+
+
+
+<div class="browser-screen" id="screen">
+
+
+🌐 Welcome to AI Hub Browser
+
+
+</div>
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+<script>
+
+
+function loadPage(){
+
+
+let url =
+document.getElementById("urlInput").value;
+
+
+let screen =
+document.getElementById("screen");
+
+
+
+if(url.trim()==""){
+
+
+screen.innerHTML=
+"Please enter something";
+
+
+return;
+
+}
+
+
+
+screen.innerHTML =
+
+`
+<div>
+
+<h2>Request received 🚀</h2>
+
+<p>
+
+You entered:
+
+<br><br>
+
+${url}
+
+</p>
+
+
+<p>
+
+Backend connection will be added soon.
+
+</p>
+
+</div>
+
+`;
+
+}
+
+
+
+function reloadPage(){
+
+location.reload();
+
+}
+
+
+
+function goBack(){
+
+history.back();
+
+}
+
+
+
+function goForward(){
+
+history.forward();
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
