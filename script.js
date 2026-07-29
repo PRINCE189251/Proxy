@@ -6,7 +6,7 @@ console.log("AI Hub Loaded 🚀");
 // Backend URL
 // Later we will replace this with your Render URL
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://ai-hub-backend-2hwe.onrender.com";
 
 
 // Test backend connection
