@@ -278,4 +278,77 @@ header h1{
 }
 
 
+}.chat-box{
+
+    height:400px;
+
+    overflow-y:auto;
+
+    background:rgba(255,255,255,0.08);
+
+    padding:20px;
+
+    border-radius:20px;
+
+    margin-top:30px;
+
+}
+
+
+.message{
+
+    padding:12px 18px;
+
+    margin:10px;
+
+    border-radius:15px;
+
+    max-width:70%;
+
+}
+
+
+.ai{
+
+    background:#1e293b;
+
+}
+
+
+.user{
+
+    background:#2563eb;
+
+    margin-left:auto;
+
+}
+
+
+
+.chat-input{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+
+
+.chat-input input{
+
+    flex:1;
+
+    padding:15px;
+
+    border-radius:30px;
+
+    border:none;
+
+    background:#1e293b;
+
+    color:white;
+
 }
