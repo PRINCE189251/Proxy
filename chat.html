@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Hub Chat</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<aside class="sidebar">
+
+<div class="logo">
+🚀 AI Hub
+</div>
+
+
+<nav>
+
+<a href="index.html">
+🏠 Home
+</a>
+
+<a class="active">
+🤖 AI Chat
+</a>
+
+<a href="browser.html">
+🌐 Browser
+</a>
+
+<a href="image.html">
+🎨 Image Generator
+</a>
+
+<a href="settings.html">
+⚙ Settings
+</a>
+
+
+</nav>
+
+
+<div class="profile">
+👤 Prince
+</div>
+
+
+</aside>
+
+
+
+<main class="main">
+
+
+<h1>
+🤖 AI Chat
+</h1>
+
+<p>
+Talk with your AI assistant
+</p>
+
+
+
+<div class="chat-box" id="chatBox">
+
+
+<div class="message ai">
+
+Hello! 👋 How can I help you?
+
+</div>
+
+
+</div>
+
+
+
+<div class="chat-input">
+
+
+<input 
+id="message"
+placeholder="Type your message..."
+>
+
+
+<button onclick="sendChat()">
+Send
+</button>
+
+
+</div>
+
+
+</main>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+
+async function sendChat(){
+
+
+let input=document.getElementById("message");
+
+let chat=document.getElementById("chatBox");
+
+
+let text=input.value;
+
+
+if(text=="") return;
+
+
+
+chat.innerHTML +=
+
+`
+<div class="message user">
+${text}
+</div>
+`;
+
+
+
+let reply = await sendMessage(text);
+
+
+
+chat.innerHTML +=
+
+`
+<div class="message ai">
+${reply}
+</div>
+`;
+
+
+
+input.value="";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
